@@ -1,0 +1,40 @@
+package pk1;
+
+import java.util.Objects;
+
+public class Professeur extends Emsiste {
+	public int salaire;
+	
+	public Professeur (String nom, int anneeArr,int salaire) {
+		super(nom,anneeArr);
+		this.salaire=salaire;
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Professeur [salaire=" + salaire + "]";
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Professeur other = (Professeur) obj;
+		return salaire == other.salaire;
+	}
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
+	
+	                             
+	
+}

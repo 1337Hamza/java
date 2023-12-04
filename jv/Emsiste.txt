@@ -1,0 +1,48 @@
+package pk1;
+
+import java.util.Objects;
+
+public class Emsiste implements Comparable<Emsiste> {
+	private String nom;
+	private int anneeArr;
+	
+	public Emsiste( String nom, int anneeArr) {
+		this.nom=nom;
+		this.anneeArr=anneeArr;
+	}
+
+	@Override
+	public String toString() {
+		return "Emsiste [nom=" + nom + ", anneeArr=" + anneeArr + "]";
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Emsiste other = (Emsiste) obj;
+		return anneeArr == other.anneeArr && Objects.equals(nom, other.nom);
+	}
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
+
+	@Override
+	public int compareTo(Emsiste o) {
+		// TODO Auto-generated method stub
+		return this.nom.compareTo(o.nom);                           
+	}
+	
+	
+	
+	
+	
+}

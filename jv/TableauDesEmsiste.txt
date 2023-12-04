@@ -1,0 +1,28 @@
+package pk1;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class TableauDesEmsiste {
+	private Emsiste[] emsiste = new Emsiste[5];
+	
+	public void remplir() {
+		emsiste[0]=new Emsiste("youssef",2008); 
+		emsiste[1]=new Emsiste("walid",2020); 
+		emsiste[2]=new Emsiste("ibtissam",2016); 
+		emsiste[3]=new Emsiste("ouail",2003); 
+		emsiste[4]=new Emsiste("aya",2007); 
+	}
+	public void trier() {
+		Arrays.sort(emsiste);
+	}
+	
+	public void ajouter(Emsiste emp,int pos) {
+		if(pos>=0 && pos<=emsiste.length)
+		{
+		ArrayList<Emsiste> liste = new ArrayList<Emsiste>(Arrays.asList(emsiste));
+		liste.add(pos,emp);
+		emsiste= liste.toArray(new Emsiste[liste.size()]);}
+		throw new IllegalArgumentException("la position doit etre"+"comprise entre 0 et la taille");
+	}
+}
